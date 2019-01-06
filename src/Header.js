@@ -5,9 +5,10 @@ import withStyles from "@material-ui/core/styles/withStyles";
 const styles = theme => ({
   header: {
     flex: 0.05,
-    background: "linear-gradient(to left, #c65825, #ce5f2b , #c65825)",
-  //  width: "100%",
+    background: "linear-gradient(to left, #c65825, #ce5d29 , #c65825)",
     display: "flex",
+    //"justify-content": "center",
+    "align-items": "center",
     padding: 10,
     color: "white"
   }

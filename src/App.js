@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import logo from './images/logo.svg';
-//import './App.css';
+
 import PropTypes from "prop-types";
 
 import Header from './Header.js';
 import Footer from './Footer.js';
 
 import withStyles from "@material-ui/core/styles/withStyles";
+import TempContent from './TempContent.js';
 
 const styles = theme => ({
   content: {
     display: "flex",
     "flex-direction": "column",
     height: "100vh",
-  //  width: "100vw"
-  //backgroundColor: "purple"
   },
   fullScreenContent: {
-  //  width: "100%",
     display: "flex",
     flex: 0.9,
-    //height: "100%"
+    "overflow-y": "scroll"
   }
 });
 
 class App extends Component {
+  /**
+  *  The rendered app that contains all other content. Has a header, all content
+  *  and footer.
+  **/
   static propTypes = {
     classes: PropTypes.object.isRequired
   };
@@ -37,22 +38,7 @@ class App extends Component {
       <div className={classes.content}>
         <Header/>
         <FullScreenContent classes={classes}>
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </div>
+          <TempContent/>
         </FullScreenContent>
         <Footer/>
       </div>
@@ -61,6 +47,10 @@ class App extends Component {
 }
 
 class FullScreenContent extends Component {
+  /**
+  *  This class sits between the <Header/> and <Footer/> and takes up 100%
+  *  of the available space. All website content goes in here.
+  **/
   static propTypes = {
     classes: PropTypes.object.isRequired,
     children: PropTypes.array.isRequired

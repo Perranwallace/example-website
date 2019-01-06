@@ -5,10 +5,11 @@ import withStyles from "@material-ui/core/styles/withStyles";
 const styles = theme => ({
   footer: {
     flex: 0.05,
-    background: "linear-gradient(to left, #c65825, #ff9b5e , #c65825)",
-    //width: "100%",
+    background: "linear-gradient(to left, #c65825, #ce5d29 , #c65825)",
     display: "flex",
-    padding: 10
+    "align-items": "center",
+    padding: 10,
+    color: "white"
   }
 });
 
@@ -21,7 +22,7 @@ class CollaborationDialog extends React.Component {
 
     return (
       <div className={classes.footer}>
-        <label> hi </label>
+        <label> This is my awesome footer!! </label>
       </div>
     );
   }
